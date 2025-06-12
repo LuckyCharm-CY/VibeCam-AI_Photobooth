@@ -1,38 +1,53 @@
-/* Font Style */
 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+/* Font Style */
+@import url('https://fonts.googleapis.com/css2?family=Lora&family=Quicksand:wght@400;600&display=swap');
+
 body {
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
+  font-family: 'Lora', serif;
+  background: linear-gradient(to bottom, #fdf6ec, #f6e9e2);
   color: #333;
   margin: 0;
   padding: 20px;
   text-align: center;
+  position: relative;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/white-wall.png');
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
+}
+
 h1 {
+  font-family: 'Lora', serif;
   font-weight: 600;
   font-size: 2.5rem;
   margin-bottom: 1rem;
   letter-spacing: 1px;
 }
 
-/* Button styling for aesthetic look */
 
+/* Button styling for vintage look */
 button {
   font-family: 'Quicksand', sans-serif;
   padding: 10px 20px;
   font-size: 1rem;
   border-radius: 12px;
-  border: none;
-  background-color: #ff7b9c;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border: 1px solid #d3bfae;
+  background-color: #f6e4d9;
+  color: #5e4c3b;
+  box-shadow: 2px 3px 0 #d3bfae;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 button:hover {
-  background-color: #f06283;
+  background-color: #e9cbb7;
 }
 
 /* Booth centers*/
@@ -46,6 +61,38 @@ button:hover {
 
 
 /* Camera and photo strip */
+.camera-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.countdown-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+#countdown {
+  display: none;
+  font-size: 5rem;
+  font-weight: bold;
+  color: #ff4081;
+  animation: pulse 1s infinite;
+}
+
+
+/* Give camera prevview a soft vintage feel */
+#video {
+  border-radius: 16px;
+  border: 4px solid #e0c6b5;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+  max-width: 100%;
+  margin-top: 20px;
+}
+
 
 .camera-area {
     text-align: center;
@@ -54,28 +101,18 @@ button:hover {
     margin-top: 10px;
     text-align: center;
 }
-#photo-strip {
-    display: block;
-    margin: 20px auto;
-    border: 5px solid #333;
-    box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
-}
-#photo-strip {
-    display: block;
-    margin: 20px auto;
-    border: 12px solid #000;        
-    border-radius: 15px;            
-    background-color: white;         
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4); 
-}
+
 #photo-strip {
   display: block;
   margin: 20px auto;
   border: 12px solid #000;
   border-radius: 15px;
   background-color: white;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.4),
+    inset 0 0 10px rgba(0,0,0,0.05);
 }
+
 .countdown-wrapper {
   display: flex;
   justify-content: center;
@@ -112,4 +149,58 @@ button:hover {
 @keyframes flash {
   0% { opacity: 0.7; }
   100% { opacity: 0; }
+}
+
+/* Toolbar styling*/
+body {
+  font-family: 'Lora', serif;
+  background: linear-gradient(to bottom, #fdf6ec, #f6e9e2);
+  color: #333;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.toggle-btn {
+  font-family: 'Quicksand', sans-serif;
+  padding: 10px 16px;
+  border: 1px solid #d8b4a0;
+  background-color: #f6e4d9;
+  border-radius: 12px;
+  color: #5e4c3b;
+  cursor: pointer;
+  box-shadow: 2px 3px 0 #d8b4a0;
+  transition: 0.3s ease;
+}
+
+.toggle-btn.active,
+.toggle-btn:hover {
+  background-color: #e9cbb7;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+.filter-btn {
+  font-family: 'Quicksand', sans-serif;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background-color: #fff;
+  border: 1px solid #c9b6a6;
+  color: #5e4c3b;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: 0.2s ease-in-out;
+}
+
+.filter-btn:hover {
+  background-color: #f9e7dc;
+}
+
+.filter-btn.active {
+  background-color: #e7d3c5;
+  color: #40342c;
 }

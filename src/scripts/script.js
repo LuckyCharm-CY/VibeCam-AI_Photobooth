@@ -9,6 +9,48 @@ const countdown = document.getElementById('countdown');
 
 let photos = []; // store 3 snapshots
 
+const buttons = document.querySelectorAll('.toggle-btn');
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Toggle active class
+    buttons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const section = btn.dataset.section;
+    console.log("Switched to section:", section);
+    // TODO: show the section content (e.g., filters UI)
+  });
+});
+
+const filterPanel = document.getElementById('filters-panel');
+const toggleButtons = document.querySelectorAll('.toggle-btn');
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+// Show filters when Filters tab is clicked
+toggleButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const section = btn.dataset.section;
+
+    // Show only filters-panel for now
+    filterPanel.style.display = (section === "filters") ? "block" : "none";
+  });
+});
+
+// Apply filter to live video
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const selected = btn.dataset.filter;
+    video.className = ''; // remove any previous filter
+    if (selected !== "none") {
+      video.classList.add(`filter-${selected}`);
+    }
+  });
+});
+
 // Start video stream
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(stream => {
