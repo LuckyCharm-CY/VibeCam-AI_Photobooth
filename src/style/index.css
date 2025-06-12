@@ -1,0 +1,115 @@
+/* Font Style */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to bottom right, #fdfbfb, #ebedee);
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+h1 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+/* Button styling for aesthetic look */
+
+button {
+  font-family: 'Quicksand', sans-serif;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: none;
+  background-color: #ff7b9c;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #f06283;
+}
+
+/* Booth centers*/
+.booth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Camera and photo strip */
+
+.camera-area {
+    text-align: center;
+}
+.controls {
+    margin-top: 10px;
+    text-align: center;
+}
+#photo-strip {
+    display: block;
+    margin: 20px auto;
+    border: 5px solid #333;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+}
+#photo-strip {
+    display: block;
+    margin: 20px auto;
+    border: 12px solid #000;        
+    border-radius: 15px;            
+    background-color: white;         
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4); 
+}
+#photo-strip {
+  display: block;
+  margin: 20px auto;
+  border: 12px solid #000;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+}
+.countdown-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-top: 20px;
+}
+
+#countdown {
+    display: none;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ff4081;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+.flash {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: white;
+  opacity: 0.7;
+  z-index: 999;
+  animation: flash 0.4s ease-out;
+}
+
+@keyframes flash {
+  0% { opacity: 0.7; }
+  100% { opacity: 0; }
+}
