@@ -167,7 +167,7 @@ function createPhotoStrip() {
 
   document.getElementById('done').onclick = () => {
     const photoData = stripCanvas.toDataURL('image/png');
-    localStorage.setItem('stripImage', photoData);  // Save photo for next page
+sessionStorage.setItem('photoStripData', photoData);
     window.location.href = 'decorate.html';
   };
 
