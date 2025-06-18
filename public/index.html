@@ -18,9 +18,7 @@
 
         <div class="toolbar">
             <button class="toggle-btn active" data-section="filters">Filters</button>
-            <button class="toggle-btn" data-section="frames">Frames</button>
-            <button class="toggle-btn" data-section="stickers">Stickers</button>
-            <button class="toggle-btn" data-section="templates">Templates</button>
+   
         </div>
 
         <!--  Filters panel shows below the toolbar -->
@@ -31,9 +29,27 @@
             <button class="filter-btn" data-filter="y2k">💖 Y2K</button>
             <button class="filter-btn" data-filter="digicam">📸 Digicam</button>
             <button class="filter-btn" data-filter="vhs">📼 VHS</button>
-            <button class="filter-btn" data-filter="fisheye">🌀 Fisheye</button>
+            <button class="filter-btn" data-filter="dreamy">☁️ Dreamy</button>
         </div>
         </div>
+        <div id="stickers-panel" class="option-panel" style="display: none;">
+        <h3>Drag & Drop Stickers</h3>
+        <div class="sticker-options">
+            <button class="sticker-btn">☁️</button>
+            <button class="sticker-btn">🌈</button>
+            <button class="sticker-btn">⭐</button>
+            <button class="sticker-btn">✨</button>
+            <button class="sticker-btn">🌸</button>
+        </div>
+        </div>
+
+        <div id="templates-panel" class="option-panel" style="display: none;">
+        <h3>Choose a Template</h3>
+        <button class="template-btn" data-template="white">🧾 White</button>
+        <button class="template-btn" data-template="pastel">🌈 Pastel</button>
+        <button class="template-btn" data-template="polaroid">📷 Polaroid</button>
+        </div>
+
 
         <div class="camera-area camera-wrapper">
         <video id="video" autoplay playsinline></video>

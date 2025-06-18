@@ -1,0 +1,20 @@
+.filter-y2k {
+  filter: contrast(1.2) saturate(1.5) hue-rotate(30deg);
+}
+
+.filter-digicam {
+  filter: contrast(1.3) grayscale(0.2) sepia(0.2);
+}
+
+.filter-vhs {
+  filter: contrast(1.1) brightness(0.9) hue-rotate(-20deg);
+}
+
+.filter-dreamy {
+  filter: saturate(2) blur(1px);
+}
+
+.filter-none {
+  filter: none;
+}
+
